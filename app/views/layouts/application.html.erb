@@ -16,6 +16,24 @@
   </head>
 
   <body>
+    <ul>
+      <li>
+        <a href="/user_sign_out">Sign out</a>
+      </li>
+      <li>
+        <a href="/messages">My messages</a>
+      </li>
+      <li>
+        <a href="/users/<%= @current_user.id %>">My profile</a>
+      </li>
+      <li>
+        <a href="/photos">Homepage</a>
+      </li>
+    </ul>
+
+
+    <p style="color: green;"><%= notice %></p>
+    <p style="color: red;"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

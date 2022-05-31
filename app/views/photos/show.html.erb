@@ -1,0 +1,185 @@
+<div>
+  <div>
+    <h1>
+      Photo #<%= @the_photo.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/photos">
+          Go back
+        </a>
+      </div>
+      
+      <% if @current_user.id==@the_photo.owner_id %>
+      <div>
+        <a href="/delete_photo/<%= @the_photo.id %>">
+          Delete photo
+        </a>
+      </div>
+      <% end %>
+    </div>
+
+    <dl>
+      <dt>
+        Caption
+      </dt>
+      <dd>
+        <%= @the_photo.caption %>
+      </dd>
+
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <img src="<%= @the_photo.image %>">
+      </dd>
+
+      <dt>
+        Owner
+      </dt>
+      <dd>
+        <%= @the_photo.owner_id %>
+      </dd>
+
+      <dt>
+        Likes count
+      </dt>
+      <dd>
+        <% if @the_photo.likes_count == nil %>
+        <%= 0 %>
+        <% else %>
+        <%= @the_photo.likes_count%>
+        <% end %>
+      </dd>
+
+      <dt>
+        Comments count
+      </dt>
+      <dd>
+        <% if @the_photo.comments_count == nil %>
+        <%= 0 %>
+        <% else %>
+        <%= @the_photo.comments_count%>
+        <% end %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_photo.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_photo.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div>
+  <% like=Like.where({:liker_id => @current_user.id, :photo_id => @the_photo.id}).first %>
+
+    <% if like == nil  %>
+    <form action="/insert_like" method="post">
+      <div>
+        <input type="hidden" id="image_box" name="query_photo_id" value="<%=@the_photo.id%>">
+      </div>
+
+      <button>
+        Like this post!
+      </button>
+    </form>
+    <% else %>
+    <a href="/delete_like/<%=like.id %>" 
+      <p>Un-like this post</p>
+    </a>
+    <% end %>
+</div>
+
+<% if @the_photo.comments.count != 0 %>
+<hr>
+
+<div>
+  <table border="1">
+    <tr>
+      <th>
+        Commenter
+      </th>
+
+      <th>
+        Content
+      </th>
+
+      <th>
+        Created at
+      </th>
+
+      <th>
+        Updated at
+      </th>
+
+    </tr>
+
+    <% @the_photo.comments.each do |a_comment| %>
+    <tr>
+      <td>
+        <a href="/users/<%= a_comment.commenter_id%>">
+          <%= a_comment.commenter.username%>
+
+        </a>
+      </td>
+
+      <td>
+        <%= a_comment.body %>
+      </td>
+
+      <td>
+        <%= time_ago_in_words(a_comment.created_at) %> ago
+      </td>
+      <td>
+        <%= time_ago_in_words(a_comment.updated_at) %> ago
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<% end %>
+
+<% if @current_user.id==@the_photo.owner_id %>
+  <div>
+    <div>
+      <h2>
+        Edit photo
+      </h2>
+
+      <form action="/modify_photo/<%= @the_photo.id %>"  method="post" >
+        <div>
+          <label for="caption_box">
+            Caption
+          </label>
+
+          <input type="text" id="caption_box" name="query_caption" value="<%= @the_photo.caption %>">
+        </div>
+
+        <div>
+          <label for="image_box">
+            Image
+          </label>
+
+          <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>">
+        </div>
+
+        <button>
+          Update photo
+        </button>
+      </form>
+    </div>
+  </div>
+<% end %>
+
+<hr>

@@ -1,0 +1,51 @@
+id,genre,time_commitment,age,experience,role,username,email,created_at,updated_at,password_digest
+0,noise,5.3,32.0,5.7,bassist,Jill Stewart,ryan69@example.net,2022-05-21 04:03:41.000000,2022-05-31 00:18:40.871732,zy84TT+FN!
+1,vocal,8.4,32.0,3.3,vocalist,Jillian Mcgee,xfoster@example.com,2022-05-03 10:08:49.000000,2022-05-31 00:18:40.873755,t6(3#YuYNG
+2,bristol,9.2,26.0,6.7,vocalist,Cindy Baldwin,kingrachel@example.com,2022-05-28 05:47:01.000000,2022-05-31 00:18:40.875729,&5X4)Zm4n9
+3,trip-hop,9.0,22.0,4.4,drummer,Joyce Lyons,nicholasjackson@example.com,2022-05-26 18:12:11.000000,2022-05-31 00:18:40.877717,_6GZOl&*ZW
+4,thrash metal,12.3,24.0,1.0,keyboard player,Dr. Spencer Cobb,stewartheather@example.net,2022-05-04 03:29:44.000000,2022-05-31 00:18:40.878712,o70DCmZWU!
+5,Stoner Rock,4.8,28.0,6.0,drummer,Amy Gomez,alexandriagriffin@example.com,2022-05-28 23:08:29.000000,2022-05-31 00:18:40.879712,)02MTPnG^u
+6,electronic,15.4,30.0,7.7,lead guitarist,Randy Williams,schneiderrick@example.org,2022-05-17 18:40:01.000000,2022-05-31 00:18:40.880710,tlh04DAg#^
+7,rap,14.8,24.0,3.1,keyboard player,Joseph Myers,bmcbride@example.net,2022-05-16 18:50:58.000000,2022-05-31 00:18:40.880710,)0bEhqe5*Z
+8,ambient,13.4,25.0,2.8,bassist,Kristina Daniels,isaac94@example.com,2022-05-09 18:43:19.000000,2022-05-31 00:18:40.881706,G8ue5Cos%%
+9,nice girl project,16.7,18.0,2.2,keyboard player,Jennifer Mcclain,nboone@example.org,2022-05-05 02:21:06.000000,2022-05-31 00:18:40.882719,*inWrvMvc5
+10,musicologist,4.6,17.0,6.6,vocalist,Robert Brown DVM,kristina15@example.net,2022-05-05 19:28:55.000000,2022-05-31 00:18:40.883700,!9x9x2Yd^_
+11,singapore,7.2,22.0,4.1,keyboard player,Heather Jackson,jordan02@example.com,2022-05-10 19:58:39.000000,2022-05-31 00:18:40.885694,8v%2xHipUR
+12,60s,3.7,21.0,3.8,vocalist,Miss Sierra Smith,anne09@example.net,2022-05-14 03:09:58.000000,2022-05-31 00:18:40.885694,eu+9HZ6a4x
+13,black metal,10.9,17.0,5.1,drummer,Katherine Green,jamie85@example.org,2022-05-04 19:26:25.000000,2022-05-31 00:18:40.885694,b$pw8O+4%r
+14,italian,7.3,29.0,4.1,lead guitarist,Denise Conway,hernandezamber@example.org,2022-05-24 07:03:57.000000,2022-05-31 00:18:40.886692,)&LWt6xVo5
+15,bluegrass,8.7,23.0,1.1,bassist,Brian Malone,misty08@example.net,2022-05-27 22:51:22.000000,2022-05-31 00:18:40.887691,fDv8+w2a!@
+16,black metal,14.4,20.0,5.7,drummer,Daniel Hughes,carolbolton@example.com,2022-05-20 22:43:05.000000,2022-05-31 00:18:40.887691,($M_wpeC6N
+17,sertanejo de raiz,14.4,26.0,7.2,keyboard player,Jamie Perez,alex31@example.net,2022-05-28 07:08:52.000000,2022-05-31 00:18:40.888687,eWpD0Ic#^t
+18,ska,1.8,19.0,5.2,bassist,Donald Stephens,wnguyen@example.net,2022-05-12 09:00:44.000000,2022-05-31 00:18:40.889684,l+e4NUygnf
+19,psytrance,10.3,23.0,6.2,vocalist,Fred Rose,brownpaul@example.com,2022-05-27 17:45:39.000000,2022-05-31 00:18:40.892678,I)1Hs^PD_k
+20,indie,1.7,24.0,5.8,vocalist,James Hoffman,ohunter@example.org,2022-05-24 18:51:39.000000,2022-05-31 00:18:40.894685,UZaC_r@O^5
+21,krautrock,7.9,17.0,7.3,vocalist,Catherine King,thomasrussell@example.net,2022-05-06 03:31:59.000000,2022-05-31 00:18:40.895669,6*3SYrl6$x
+22,Zeuhl,11.2,25.0,5.9,keyboard player,Mrs. Jill Hill,stephensonruben@example.org,2022-05-25 01:38:42.000000,2022-05-31 00:18:40.895669,@6Qd42NawR
+23,seen live,9.5,29.0,3.1,rhythm guitarist,Amanda Fritz,jessicajohnson@example.org,2022-05-24 13:04:29.000000,2022-05-31 00:18:40.896666,*n8W21KB#5
+24,Deutsch Rap,17.8,20.0,9.3,bassist,Robert Andrews,lisa09@example.org,2022-05-27 20:57:35.000000,2022-05-31 00:18:40.896666,b*@e7KVwkS
+25,electronic,5.4,21.0,5.0,drummer,Charles Johnson,alvarezronald@example.net,2022-05-13 06:04:32.000000,2022-05-31 00:18:40.897664,+7xUzTYxLB
+26,Hawaiian,20.2,25.0,4.1,drummer,Brett Cortez,odominguez@example.com,2022-05-03 14:40:13.000000,2022-05-31 00:18:40.898661,(!&A91HRWr
+27,Lo-Fi,11.6,20.0,2.2,rhythm guitarist,Gloria Fowler,hallscott@example.org,2022-05-30 18:56:58.000000,2022-05-31 00:18:40.898661,_S5Rz$i(c0
+28,funk,22.1,23.0,4.7,vocalist,Jason Walsh,vvaldez@example.com,2022-05-14 10:59:03.000000,2022-05-31 00:18:40.899658,^)0WGN3d*2
+29,Pop-Rock,19.5,26.0,6.4,vocalist,Ross Sanchez,joshua80@example.com,2022-05-15 22:30:42.000000,2022-05-31 00:18:40.900657,ih_k0CxLFw
+30,black metal,5.4,19.0,2.3,lead guitarist,Sandra Rodriguez,james65@example.org,2022-05-18 12:50:17.000000,2022-05-31 00:18:40.900657,$T9DsO@N51
+31,dubstep,9.1,27.0,6.4,drummer,Beth Johnson,thomasbeth@example.org,2022-05-15 21:00:39.000000,2022-05-31 00:18:40.901657,C03SrppAT^
+32,rock,16.4,21.0,5.0,drummer,Justin Webb,kevans@example.com,2022-05-28 09:51:37.000000,2022-05-31 00:18:40.902650,(eXS6QYrj@
+33,shoegaze,10.8,29.0,9.5,vocalist,Amy Smith,fowlerjoshua@example.net,2022-05-16 17:16:13.000000,2022-05-31 00:18:40.902650,^8CKF8+i$z
+34,video game music,1.5,35.0,5.8,keyboard player,Jonathan Esparza,williamwolfe@example.org,2022-05-28 16:12:03.000000,2022-05-31 00:18:40.903648,%FcQ#GQxK2
+35,indie,16.0,22.0,3.8,vocalist,Eric Nunez,careydaniel@example.com,2022-05-02 11:49:10.000000,2022-05-31 00:18:40.904643,e(#g2UnOky
+36,Rhythmic Noise,4.2,19.0,5.4,lead guitarist,Ronald Hoffman,diane65@example.org,2022-05-16 03:52:02.000000,2022-05-31 00:18:40.905640,t_jF0VUpc)
+37,christian pop,4.9,35.0,3.7,rhythm guitarist,Robert Wagner,kennethpena@example.net,2022-05-11 02:54:41.000000,2022-05-31 00:18:40.907638,b+u1AQjh&0
+38,OPM,4.4,17.0,0.9,lead guitarist,Christy Lyons,paynejames@example.org,2022-05-07 19:31:55.000000,2022-05-31 00:18:40.909630,$uD_pXFd+8
+39,contemporary classical,1.6,38.0,2.5,rhythm guitarist,Erika Stephenson,patricia99@example.net,2022-05-04 19:17:04.000000,2022-05-31 00:18:40.911630,(2UHuf83!&
+40,doom metal,4.7,28.0,1.1,keyboard player,Barbara Washington,gardnerkristina@example.net,2022-05-22 05:44:35.000000,2022-05-31 00:18:40.912629,h5+PZ8tK@(
+41,british,16.1,20.0,3.3,lead guitarist,Anthony Nguyen,johnsonedward@example.org,2022-05-21 23:59:13.000000,2022-05-31 00:18:40.914616,(8nLt_7gDn
+42,seen live,4.1,22.0,5.1,rhythm guitarist,Melissa Underwood,lisa54@example.org,2022-05-14 06:05:57.000000,2022-05-31 00:18:40.915615,#T4IJf6aF4
+43,Hip-Hop,3.3,21.0,2.9,bassist,Amanda Durham,kellyerin@example.net,2022-05-02 17:58:38.000000,2022-05-31 00:18:40.916610,+t3F_qZXBX
+44,under 2000 listeners,19.5,29.0,4.8,drummer,Laura Marquez,michellewagner@example.org,2022-05-26 12:02:09.000000,2022-05-31 00:18:40.917608,*@3z)hMqR+
+45,australian,15.9,31.0,6.8,keyboard player,Gordon Stephens,kevinwashington@example.org,2022-05-27 05:21:21.000000,2022-05-31 00:18:40.918611,X!7U&knC6$
+46,swiss hip-hop,11.2,18.0,2.5,lead guitarist,Caleb Quinn,howardclayton@example.org,2022-05-17 18:35:11.000000,2022-05-31 00:18:40.920602,c@0UKhJmz3
+47,Progressive House,6.0,26.0,3.1,drummer,Susan Fitzpatrick,cheyenne08@example.net,2022-05-22 16:18:29.000000,2022-05-31 00:18:40.923600,%OVVNrcx_2
+48,under 2000 listeners,1.4,27.0,2.1,drummer,Megan Sharp,davidschmidt@example.com,2022-05-17 00:43:16.000000,2022-05-31 00:18:40.927581,VbT9w%Qa+9
+49,crossover,3.7,24.0,9.0,keyboard player,Patrick Sharp,parksgabriel@example.org,2022-05-26 23:09:07.000000,2022-05-31 00:18:40.929576,e!x28YBZ#h

@@ -1,0 +1,141 @@
+<div>
+  <h1><%= @the_user.username%>'s Homepage</h1>
+  <dl>
+    <dt>
+      Role
+    </dt>
+    <dd>
+      <%= @the_user.role %>
+    </dd>
+
+    <dt>
+      Genre
+    </dt>
+    <dd>
+      <%= @the_user.genre %>
+    </dd>
+
+    <dt>
+      Age
+    </dt>
+    <dd>
+      <%= @the_user.age %>
+    </dd>
+
+    <dt>
+      Time Commitment
+    </dt>
+    <dd>
+      <%= @the_user.time_commitment%> hours a week
+    </dd>
+
+    <dt>
+      Experience
+    </dt>
+    <dd>
+      <%= @the_user.experience%> years
+    </dd>
+
+    <dt>
+      Created at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@the_user.created_at) %> ago
+    </dd>
+
+    <dt>
+      Updated at
+    </dt>
+    <dd>
+      <%= time_ago_in_words(@the_user.updated_at) %> ago
+    </dd>
+  </dl>
+</div>
+<% if @current_user==@the_user%>
+<div>
+  <a href="/edit_user_profile">Edit my profile</a>
+</div>
+<% end %>
+<hr>
+
+<div>
+  <table border="1">
+    <tr>
+      <th>
+        ID
+      </th>
+
+      <th>
+        Caption
+      </th>
+
+      <th>
+        Image
+      </th>
+
+      <th>
+        Likes count
+      </th>
+
+      <th>
+        Comments count
+      </th>
+
+      <th>
+        Created at
+      </th>
+
+      <th>
+        Updated at
+      </th>
+
+      <th>
+      </th>
+    </tr>
+
+    <% @the_user.own_photos.each do |a_photo| %>
+    <tr>
+      <td>
+        <%= a_photo.id %>
+      </td>
+
+      <td>
+        <%= a_photo.caption %>
+      </td>
+
+      <td>
+        <img src="<%= a_photo.image %>" style="width:80px;height:50px;">
+      </td>
+
+      <td>
+        <% if a_photo.likes_count == nil %>
+        <%= 0 %>
+        <% else %>
+        <%= a_photo.likes_count%>
+        <% end %>
+      </td>
+
+      <td>
+        <% if a_photo.comments_count == nil %>
+        <%= 0 %>
+        <% else %>
+        <%= a_photo.comments_count%>
+        <% end %>
+      </td>
+
+      <td>
+        <%= time_ago_in_words(a_photo.created_at) %> ago
+      </td>
+      <td>
+        <%= time_ago_in_words(a_photo.updated_at) %> ago
+      </td>
+
+      <td>
+        <a href="/photos/<%= a_photo.id %>">
+          Show details
+        </a>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
