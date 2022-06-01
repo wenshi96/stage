@@ -25,7 +25,7 @@ class UserAuthenticationController < ApplicationController
       else
         session[:user_id] = user.id
       
-        redirect_to("/photos", { :notice => "Signed in successfully." })
+        redirect_to("/photos", { :notice => "Signed in successfully. Welcome to Stage!" })
       end
     else
       redirect_to("/user_sign_in", { :alert => "No user with that email address." })
@@ -60,7 +60,7 @@ class UserAuthenticationController < ApplicationController
     if save_status == true
       session[:user_id] = @user.id
    
-      redirect_to("/photos", { :notice => "User account created successfully."})
+      redirect_to("/photos", { :notice => "User account created successfully. Welcome to Stage!"})
     else
       redirect_to("/user_sign_up", { :alert => @user.errors.full_messages.to_sentence })
     end
@@ -94,7 +94,7 @@ class UserAuthenticationController < ApplicationController
     @current_user.destroy
     reset_session
     
-    redirect_to("/user_sign_in", { :notice => "User account cancelled" })
+    redirect_to("/user_sign_in", { :notice => "User account deleted" })
   end
  
 end

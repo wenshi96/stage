@@ -71,8 +71,19 @@
   </form>
 </div>
 <% end %>
+
+<% if @current_user == @the_user%>
+<div>
+  <form action="/cancel_user_account">
+    <button>
+      Delete my account!
+    </button>
+  </form>
+</div>
+<% end %>
 <hr>
 
+<% if @the_user.own_photos.count !=0 %>
 <div>
   <table border="1">
     <tr>
@@ -154,3 +165,5 @@
     <% end %>
   </table>
 </div>
+
+<% end %>
