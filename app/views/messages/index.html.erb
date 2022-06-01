@@ -13,10 +13,6 @@
     <table border="1">
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
           Contact
         </th>
 
@@ -25,24 +21,15 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Message sent
         </th>
         <th></th>
       </tr>
       <% @contact_users_id.each_with_index do |a_contact, n| %>
-
-        <% @list_of_messages.each_with_index do |a_message, count| %>
-          <% if [a_message.sender_id, a_message.receiver_id].include? a_contact %>
-          
+      <% @my_messages = Message.where({:sender_id=>@current_user.id, :receiver_id=> a_contact}).or(Message.where({:sender_id=>a_contact, :receiver_id=> @current_user.id})).order({ :created_at => :desc })%>
+        <% @my_messages.each_with_index do |a_message, count| %>
+          <% if count == 0 %>
         <tr>
-          <td>
-            <%= n+1 %>
-          </td>
-
           <td>
             <%= User.where({:id=>a_contact}).first.username%>
           </td>
@@ -54,9 +41,7 @@
           <td>
             <%= time_ago_in_words(a_message.created_at) %> ago
           </td>
-          <td>
-            <%= time_ago_in_words(a_message.updated_at) %> ago
-          </td>
+
           <td>
             <a href="\messages\<%=a_contact%>">
               Check out chat history

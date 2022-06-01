@@ -37,17 +37,10 @@
     </dd>
 
     <dt>
-      Created at
+      Joined Stage at
     </dt>
     <dd>
       <%= time_ago_in_words(@the_user.created_at) %> ago
-    </dd>
-
-    <dt>
-      Updated at
-    </dt>
-    <dd>
-      <%= time_ago_in_words(@the_user.updated_at) %> ago
     </dd>
   </dl>
 </div>
@@ -88,10 +81,6 @@
   <table border="1">
     <tr>
       <th>
-        ID
-      </th>
-
-      <th>
         Caption
       </th>
 
@@ -108,11 +97,7 @@
       </th>
 
       <th>
-        Created at
-      </th>
-
-      <th>
-        Updated at
+        Posted at
       </th>
 
       <th>
@@ -121,10 +106,6 @@
 
     <% @the_user.own_photos.each do |a_photo| %>
     <tr>
-      <td>
-        <%= a_photo.id %>
-      </td>
-
       <td>
         <%= a_photo.caption %>
       </td>
@@ -151,9 +132,6 @@
 
       <td>
         <%= time_ago_in_words(a_photo.created_at) %> ago
-      </td>
-      <td>
-        <%= time_ago_in_words(a_photo.updated_at) %> ago
       </td>
 
       <td>

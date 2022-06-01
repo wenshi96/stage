@@ -44,9 +44,6 @@
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
           Caption
@@ -69,11 +66,7 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Posted at
         </th>
 
         <th>
@@ -82,9 +75,6 @@
 
       <% @list_of_photos.each do |a_photo| %>
       <tr>
-        <td>
-          <%= a_photo.id %>
-        </td>
 
         <td>
           <%= a_photo.caption %>
@@ -118,9 +108,6 @@
 
         <td>
           <%= time_ago_in_words(a_photo.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_photo.updated_at) %> ago
         </td>
 
         <td>

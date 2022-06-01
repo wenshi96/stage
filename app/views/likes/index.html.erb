@@ -16,19 +16,11 @@
     <table border="1">
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
-          Photo
+          Photo Owner
         </th>
 
         <th>
           Created at
-        </th>
-
-        <th>
-          Updated at
         </th>
 
         <th>
@@ -37,19 +29,13 @@
 
       <% @list_of_likes.each do |a_like| %>
       <tr>
-        <td>
-          <%= a_like.id %>
-        </td>
 
         <td>
-          <%= a_like.photo_id %>
+          <%= a_like.photo.owner.username %>
         </td>
 
         <td>
           <%= time_ago_in_words(a_like.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_like.updated_at) %> ago
         </td>
 
         <td>

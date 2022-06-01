@@ -39,7 +39,7 @@
         Owner
       </dt>
       <dd>
-        <%= @the_photo.owner_id %>
+        <%= @the_photo.owner.username %>
       </dd>
 
       <dt>
@@ -65,18 +65,12 @@
       </dd>
 
       <dt>
-        Created at
+        Posted at
       </dt>
       <dd>
         <%= time_ago_in_words(@the_photo.created_at) %> ago
       </dd>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_photo.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
@@ -141,10 +135,6 @@
         Created at
       </th>
 
-      <th>
-        Updated at
-      </th>
-
     </tr>
 
     <% @the_photo.comments.each do |a_comment| %>
@@ -163,9 +153,6 @@
       <td>
         <%= time_ago_in_words(a_comment.created_at) %> ago
       </td>
-      <td>
-        <%= time_ago_in_words(a_comment.updated_at) %> ago
-      </td>
     </tr>
     <% end %>
   </table>
@@ -173,6 +160,7 @@
 <% end %>
 
 <% if @current_user.id==@the_photo.owner_id %>
+<hr>
   <div>
     <div>
       <h2>

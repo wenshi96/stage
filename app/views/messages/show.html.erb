@@ -40,10 +40,6 @@
     <table border="1">
       <tr>
         <th>
-          ID
-        </th>
-
-        <th>
           Sender
         </th>
 
@@ -56,20 +52,12 @@
         </th>
 
         <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Message sent
         </th>
 
       </tr>
       <% @list_of_messages.each do |a_message| %>
       <tr>
-        <td>
-          <%= a_message.id %>
-        </td>
-
         <td>
           <%= a_message.sender.username %>
         </td>
@@ -84,9 +72,6 @@
 
         <td>
           <%= time_ago_in_words(a_message.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_message.updated_at) %> ago
         </td>
       </tr>
       <%end%>

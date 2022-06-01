@@ -2,10 +2,11 @@ class MessagesController < ApplicationController
   def index
     # matching_messages = Message.all
     matching_messages = @current_user.sent_messages.or(@current_user.received_messages)
+    matching_messages = matching_messages.order({ :created_at => :desc })
     contact_users_id = matching_messages.map_relation_to_array(:sender_id)+matching_messages.map_relation_to_array(:receiver_id)
     @contact_users_id = contact_users_id.reject { |n| n == @current_user.id }.uniq
 
-    @list_of_messages = matching_messages.order({ :created_at => :desc })
+    @list_of_messages = matching_messages
 
     render({ :template => "messages/index.html.erb" })
   end
