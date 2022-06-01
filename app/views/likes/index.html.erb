@@ -12,6 +12,7 @@
 <hr>
 <div>
   <div>
+    <% if @current_user.likes.count != 0%>
     <table border="1">
       <tr>
         <th>
@@ -59,6 +60,9 @@
       </tr>
       <% end %>
     </table>
+    <%else%>
+    <div>You haven't liked any post yet.</div>
+    <%end%>
   </div>
 </div>
 

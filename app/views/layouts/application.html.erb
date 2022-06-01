@@ -17,15 +17,22 @@
 
   <body>
     <ul>
+      <% if @current_user != nil %>
       <li>
         <a href="/user_sign_out">Sign out</a>
       </li>
       <li>
-        <a href="/messages">My messages</a>
+        <a href="/messages">My conversations</a>
       </li>
       <li>
         <a href="/users/<%= @current_user.id %>">My profile</a>
       </li>
+      <li>
+        <a href="/likes">My likes</a>
+      </li>      <li>
+        <a href="/comments">My comments</a>
+      </li>
+      <%end%>
       <li>
         <a href="/photos">Homepage</a>
       </li>

@@ -1,86 +1,22 @@
 <div>
   <div>
     <h1>
-      Message #<%= @the_message.id %> details
+      Chat history with <%= @the_user.username%>
     </h1>
-
-    <div>
-      <div>
-        <a href="/messages">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_message/<%= @the_message.id %>">
-          Delete message
-        </a>
-      </div>
-    </div>
-
-    <dl>
-      <dt>
-        Sender
-      </dt>
-      <dd>
-        <%= @the_message.sender_id %>
-      </dd>
-
-      <dt>
-        Receiver
-      </dt>
-      <dd>
-        <%= @the_message.receiver_id %>
-      </dd>
-
-      <dt>
-        Content
-      </dt>
-      <dd>
-        <%= @the_message.content %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_message.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_message.updated_at) %> ago
-      </dd>
-    </dl>
   </div>
 </div>
 
 <hr>
 
-
 <div>
   <div>
     <h2>
-      Edit message
+      Reply to your future band member, <%= @the_user.username%>
     </h2>
 
-    <form action="/modify_message/<%= @the_message.id %>"  method="post" >
+    <form action="/insert_message" method="post">
       <div>
-        <label for="sender_id_box">
-          Sender
-        </label>
-
-        <input type="text" id="sender_id_box" name="query_sender_id" value="<%= @the_message.sender_id %>">
-      </div>
-
-      <div>
-        <label for="receiver_id_box">
-          Receiver
-        </label>
-
-        <input type="text" id="receiver_id_box" name="query_receiver_id" value="<%= @the_message.receiver_id %>">
+        <input type="hidden" id="receiver_id_box" name="query_receiver_id" value="<%= @the_user.id%>">
       </div>
 
       <div>
@@ -88,14 +24,75 @@
           Content
         </label>
 
-        <input type="text" id="content_box" name="query_content" value="<%= @the_message.content %>">
+        <input type="text" id="content_box" name="query_content">
       </div>
 
       <button>
-        Update message
+        Send message!
       </button>
     </form>
   </div>
 </div>
 
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Sender
+        </th>
+
+        <th>
+          Receiver
+        </th>
+
+        <th>
+          Content
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+      </tr>
+      <% @list_of_messages.each do |a_message| %>
+      <tr>
+        <td>
+          <%= a_message.id %>
+        </td>
+
+        <td>
+          <%= a_message.sender.username %>
+        </td>
+
+        <td>
+          <%= a_message.receiver.username %>
+        </td>
+
+        <td>
+          <%= a_message.content %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_message.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_message.updated_at) %> ago
+        </td>
+      </tr>
+      <%end%>
+    </table>
+    
+    <hr>
+  </div>
+</div>
 <hr>

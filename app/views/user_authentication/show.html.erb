@@ -56,6 +56,21 @@
   <a href="/edit_user_profile">Edit my profile</a>
 </div>
 <% end %>
+<% if @current_user != @the_user%>
+<div>
+  <form action="/insert_message" method="post">
+    <div>
+      Start the conversation with <%= @the_user.username%> now:
+      <input type="hidden" id="receiver_id_box" name="query_receiver_id" value="<%= @the_user.id%>">
+      <input type="text" id="content_box" name="query_content">
+    </div>
+
+    <button>
+      message this user!
+    </button>
+  </form>
+</div>
+<% end %>
 <hr>
 
 <div>

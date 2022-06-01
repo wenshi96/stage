@@ -1,54 +1,15 @@
 <div>
   <div>
     <h1>
-      List of all comments
+      My comments
     </h1>
   </div>
 </div>
 
 <hr>
-
 <div>
   <div>
-    <h2>
-      Add a new comment
-    </h2>
-
-    <form action="/insert_comment" method="post">
-      <div>
-        <label for="body_box">
-          Body
-        </label>
-
-        <textarea id="body_box" name="query_body" rows="3"></textarea>
-      </div>
-
-      <div>
-        <label for="commenter_id_box">
-          Commenter
-        </label>
-
-        <input type="text" id="commenter_id_box" name="query_commenter_id">
-      </div>
-
-      <div>
-        <label for="photo_id_box">
-          Photo
-        </label>
-
-        <input type="text" id="photo_id_box" name="query_photo_id">
-      </div>
-
-      <button>
-        Create comment
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
-<div>
-  <div>
+    <% if @current_user.comments.count != 0%>
     <table border="1">
       <tr>
         <th>
@@ -57,10 +18,6 @@
 
         <th>
           Body
-        </th>
-
-        <th>
-          Commenter
         </th>
 
         <th>
@@ -79,7 +36,7 @@
         </th>
       </tr>
 
-      <% @list_of_comments.each do |a_comment| %>
+      <% @current_user.comments.each do |a_comment| %>
       <tr>
         <td>
           <%= a_comment.id %>
@@ -87,10 +44,6 @@
 
         <td>
           <%= a_comment.body %>
-        </td>
-
-        <td>
-          <%= a_comment.commenter_id %>
         </td>
 
         <td>
@@ -105,13 +58,16 @@
         </td>
 
         <td>
-          <a href="/comments/<%= a_comment.id %>">
+          <a href="/photos/<%= a_comment.photo.id %>">
             Show details
           </a>
         </td>
       </tr>
       <% end %>
     </table>
+    <%else%>
+    <div>You haven't commented any post yet.</div>
+    <%end%>
   </div>
 </div>
 

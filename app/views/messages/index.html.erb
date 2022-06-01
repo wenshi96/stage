@@ -1,50 +1,11 @@
 <div>
   <div>
     <h1>
-      List of all messages
+      My conversations
     </h1>
   </div>
 </div>
 
-<hr>
-
-<div>
-  <div>
-    <h2>
-      Add a new message
-    </h2>
-
-    <form action="/insert_message" method="post">
-      <div>
-        <label for="sender_id_box">
-          Sender
-        </label>
-
-        <input type="text" id="sender_id_box" name="query_sender_id">
-      </div>
-
-      <div>
-        <label for="receiver_id_box">
-          Receiver
-        </label>
-
-        <input type="text" id="receiver_id_box" name="query_receiver_id">
-      </div>
-
-      <div>
-        <label for="content_box">
-          Content
-        </label>
-
-        <input type="text" id="content_box" name="query_content">
-      </div>
-
-      <button>
-        Create message
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
 <div>
@@ -56,15 +17,11 @@
         </th>
 
         <th>
-          Sender
+          Contact
         </th>
 
         <th>
-          Receiver
-        </th>
-
-        <th>
-          Content
+          Lastest message
         </th>
 
         <th>
@@ -74,45 +31,45 @@
         <th>
           Updated at
         </th>
-
-        <th>
-        </th>
+        <th></th>
       </tr>
+      <% @contact_users_id.each_with_index do |a_contact, n| %>
 
-      <% @list_of_messages.each do |a_message| %>
-      <tr>
-        <td>
-          <%= a_message.id %>
-        </td>
+        <% @list_of_messages.each_with_index do |a_message, count| %>
+          <% if [a_message.sender_id, a_message.receiver_id].include? a_contact %>
+          
+        <tr>
+          <td>
+            <%= n+1 %>
+          </td>
 
-        <td>
-          <%= a_message.sender_id %>
-        </td>
+          <td>
+            <%= User.where({:id=>a_contact}).first.username%>
+          </td>
 
-        <td>
-          <%= a_message.receiver_id %>
-        </td>
+          <td>
+            <%= a_message.content %>
+          </td>
 
-        <td>
-          <%= a_message.content %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_message.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_message.updated_at) %> ago
-        </td>
-
-        <td>
-          <a href="/messages/<%= a_message.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+          <td>
+            <%= time_ago_in_words(a_message.created_at) %> ago
+          </td>
+          <td>
+            <%= time_ago_in_words(a_message.updated_at) %> ago
+          </td>
+          <td>
+            <a href="\messages\<%=a_contact%>">
+              Check out chat history
+            </a>
+          </td>
+        </tr>
       <% end %>
+      <% end %>
+      <% end %>
+
     </table>
+
+    <hr>
   </div>
 </div>
-
 <hr>

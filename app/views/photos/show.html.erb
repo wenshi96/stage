@@ -101,6 +101,28 @@
     <% end %>
 </div>
 
+<div>
+  <% comment=Comment.where({:commenter_id => @current_user.id, :photo_id => @the_photo.id}).first %>
+
+    <% if comment == nil  %>
+    <form action="/insert_comment" method="post">
+      <div>
+        <input type="hidden" id="image_box" name="query_photo_id" value="<%=@the_photo.id%>">
+        How do you think about it?
+          <input type="text" id="body_box" name="query_body">
+      </div>
+
+      <button>
+        comment this post!
+      </button>
+    </form>
+    <% else %>
+    <a href="/delete_comment/<%=comment.id %>" 
+      <p>Un-comment this post</p>
+    </a>
+    <% end %>
+</div>
+
 <% if @the_photo.comments.count != 0 %>
 <hr>
 
