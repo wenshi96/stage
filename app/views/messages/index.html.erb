@@ -10,6 +10,7 @@
 <hr>
 <div>
   <div>
+    <% if @list_of_messages.count != 0%>
     <table border="1">
       <tr>
         <th>
@@ -53,8 +54,11 @@
       <% end %>
 
     </table>
-
     <hr>
+    <% else %>
+    <div>You don't have any messages yet!</div>
+    <% end %>
+
   </div>
 </div>
 <hr>
